@@ -7,13 +7,15 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontFamily: {
+    },
     extend: {
       colors: {
-        'primary' : '#165FF2',
-        'secondary' : '#165FF2',
-        'green-one' : '#3574F2',
-        'green-two' : '#558C03',
-        'green-three' : '#A2D92B'
+        'primary' : '#0583F2',
+        'secondary' : '#164773',
+        'three' : '#188FD9',
+        'four' : '#BF9663',
+        'five' : '#F2F2F2'
       }
     },
   },

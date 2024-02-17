@@ -21,7 +21,7 @@ export default function Headers() {
                                         </div>
                                     </div>
                                     <div className="basis-3/4">
-                                        <div className="text-slate-400">Phone:</div>
+                                        <div className="text-gray-300">phone:</div>
                                         <div className="font-medium">541-220-8480</div>
                                     </div>
                                 </div>
@@ -36,7 +36,7 @@ export default function Headers() {
                                         </div>
                                     </div>
                                     <div className="basis-3/4">
-                                        <div className="text-slate-400">Email:</div>
+                                        <div className="text-gray-300">email:</div>
                                         <div className="font-medium">hello@crowemi.com</div>
                                     </div>
                                 </div>
