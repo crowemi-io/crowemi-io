@@ -15,7 +15,9 @@ module.exports = {
         'secondary' : '#164773',
         'three' : '#188FD9',
         'four' : '#BF9663',
-        'five' : '#F2F2F2'
+        'five' : '#F2F2F2',
+        'bc': 'rgba(255,255,255,.1)',
+        'white-50': 'rgba(255,255,255,.5)'
       }
     },
   },

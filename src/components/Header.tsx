@@ -1,17 +1,17 @@
 export default function Headers() {
     return (
-        <div className="mx-auto bg-primary border-b border-b-stone-100">
+        <div className="mx-auto bg-primary border-b border-b-bc">
             <div className="mx-auto container p-2">
                 <div className="flex p-5">
                     <div className="grow text-white">
-                        <div className="text-center sm:text-left text-5xl">
-                            Logo
+                        <div className="text-center sm:text-left font-extrabold text-5xl">
+                            crowemi-io
                         </div>
                     </div>
                     <div className="hidden sm:inline">
                         <div className="flex flex-row text-white">
                             <div className="basis-1/2 pr-5 text-nowrap">
-                                <div className="flex flex-row border-r border-red-100 pr-5">
+                                <div className="flex flex-row border-r border-r-bc pr-5">
                                     <div className="basis-1/4 pr-2 grid place-content-center">
                                         <div className="mx-auto">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-8 h-8">
@@ -22,7 +22,7 @@ export default function Headers() {
                                     </div>
                                     <div className="basis-3/4">
                                         <div className="text-gray-300">phone:</div>
-                                        <div className="font-bold">541-220-8480</div>
+                                        <div className="font-bold">555-555-5555</div>
                                     </div>
                                 </div>
                             </div>
