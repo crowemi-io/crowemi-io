@@ -14,7 +14,7 @@ export default function Menu({ linkItems }: MenuProps) {
                 <div className="grow flex basis-3/4">
                 {
                     linkItems.map((linkItem) => 
-                        <a href={linkItem.route} className="hover:border-b-white hover:border-b-4 border-b-4 border-b-primary p-5 text-lg font-bold">{linkItem.name}</a>
+                        <a href={linkItem.route} className="hover:border-b-white hover:border-b-4 border-b-4 border-b-primary p-5 text-lg">{linkItem.name}</a>
                     )
                 }
                 </div>
