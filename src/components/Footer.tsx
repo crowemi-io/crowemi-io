@@ -1,4 +1,5 @@
 import { LinkItem } from "./Menu"
+import Newsletter from "./Newsletter"
 
 interface Props {
     LinkItems: LinkItem[]
@@ -10,11 +11,12 @@ export default function Footer({ LinkItems }: Props) {
             <div className="bg-primary p-10  text-white">
                 <div className="container mx-auto pt-10 pb-10">
                     <div className="grid grid-cols-2">
-                        <div >
+                        <div>
                             <div className="text-5xl font-extrabold">ready to elevate your business?</div>
-                            <div>we're here to help</div>
+                            <div className="lead text-xl">we're here to help</div>
                         </div>
-                        <div className="text-right">2</div>
+                        <div className="text-right">
+                        </div>
 
                     </div>
                 </div>
@@ -26,7 +28,7 @@ export default function Footer({ LinkItems }: Props) {
                     <div className="grow">
                         Copyrights © {new Date().getFullYear()} All Rights Reserved by <span className="bg-secondary pr-1 pl-1 italic">crowemi-io</span>
                     </div>
-                    <div>
+                    <div className="sm:inline hidden">
                         {
                             LinkItems.map((linkItem, idx) =>
                                 <>

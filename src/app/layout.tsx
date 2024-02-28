@@ -13,10 +13,10 @@ export const metadata = {
 };
 
 const menuItems: LinkItem[] = [
-  { name: "home", route: "/" },
-  { name: "services", route: "/services" },
-  { name: "pricing", route: "/pricing" },
-  { name: "contact", route: "/contact" }
+  { id: 1, name: "home", route: "/" },
+  { id: 2, name: "services", route: "/services" },
+  { id: 3, name: "pricing", route: "/pricing" },
+  { id: 4, name: "contact", route: "/contact" }
 ]
 
 interface Props {
