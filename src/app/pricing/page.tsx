@@ -1,4 +1,5 @@
 import PageBanner from "../../components/PageBanner"
+import Divider from "../../components/divider"
 import Pricing from "../../components/pricing/Pricing"
 import PricingWebHosting from "../services/web-hosting/pricing"
 
@@ -6,6 +7,7 @@ export default function WebDevelopment() {
     return (
         <>
             <PageBanner title="pricing" tagline=" transparent pricing to build and maintain the technoloy you need to run a successful business." />
+            <div className="container mx-auto">
             <Pricing
                 title="contracting services"
                 tagline="custom efforts, enhancements, on-going support and maintenance; we offer a variety of contracting services to fit your needs."
@@ -41,12 +43,9 @@ export default function WebDevelopment() {
                     ]
                 }
             />
-            <div className="relative">
-                <div className="absolute inset-0 flex items-center" aria-hidden="true">
-                    <div className="w-full border-t border-gray-300"></div>
-                </div>
-            </div>
+            <Divider />
             <PricingWebHosting />
+            </div>
         </>
     )
 }
