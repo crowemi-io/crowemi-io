@@ -26,7 +26,7 @@ export default function Footer({ LinkItems }: Props) {
             <div  className="bg-primary p-10  text-white border-t border-t-bc">
                 <div className="flex container mx-auto">
                     <div className="grow">
-                        Copyrights © {new Date().getFullYear()} All Rights Reserved by <span className="bg-secondary pr-1 pl-1 italic">crowemi-io</span>
+                        Copyrights © {new Date().getFullYear()} All Rights Reserved by <span className="bg-black pr-1 pl-1 italic">crowemi-io</span>
                     </div>
                     <div className="sm:inline hidden">
                         {

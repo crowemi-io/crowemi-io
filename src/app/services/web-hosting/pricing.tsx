@@ -9,7 +9,7 @@ export default function PricingWebHosting() {
                 [
                     {
                         title: "Basic",
-                        tagline: "For small businesses",
+                        tagline: "For small sites with low traffic",
                         price: 25,
                         pricePeriod: "month",
                         pricingFeatures: [
@@ -17,21 +17,23 @@ export default function PricingWebHosting() {
                         ]
                     },
                     {
-                        title: "Basic",
-                        tagline: "For small businesses",
+                        title: "Standard",
+                        tagline: "For midsize sites with medium traffic",
                         price: 50,
                         pricePeriod: "month",
                         pricingFeatures: [
-                            "48-hour support response time",
+                            "Web Server",
+                            "Database Server",
                         ]
                     },
                     {
-                        title: "Basic",
+                        title: "Premium",
                         tagline: "For small businesses",
                         price: 100,
                         pricePeriod: "month",
                         pricingFeatures: [
-                            "48-hour support response time",
+                            "Web Server",
+                            "Database Server",
                         ]
                     },
                 ]

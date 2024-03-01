@@ -2,13 +2,18 @@ export default function Headers() {
     return (
         <div className="mx-auto bg-primary border-b border-b-bc">
             <div className="mx-auto container p-2">
-                <div className="flex p-5">
+                <div className="flex py-5">
                     <div className="grow text-white">
-                        <div className="text-center sm:text-left font-extrabold text-5xl">
-                            crowemi-io
+                        <div className="text-center sm:flex sm:flex-row sm:mx-auto">
+                            <div className="flex justify-center items-center pr-2">
+                                <img className="sm:w-16 w-24" src="logo.svg"></img>
+                            </div>
+                            <div className="font-extrabold text-5xl text-nowrap">
+                                crowemi-io
+                            </div>
                         </div>
                     </div>
-                    <div className="hidden sm:inline">
+                    <div className="hidden md:inline">
                         <div className="flex flex-row text-white">
                             <div className="basis-1/2 pr-5 text-nowrap">
                                 <div className="flex flex-row border-r border-r-bc pr-5">

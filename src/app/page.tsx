@@ -8,10 +8,10 @@ export default function Page() {
         <div className="mx-auto container text-center sm:pt-20 sm:pb-20 pt-10 pb-10">
           <div>
             <div className="sm:inline-block hidden text-6xl font-extrabold whitespace-nowrap text-white pb-5">
-              <span className="pr-1 pl-1">welcome to</span><span className="bg-secondary pr-1 pl-1 italic">crowemi-io</span>
+              <span className="pr-1 pl-1">welcome to</span><span className="bg-black pr-1 pl-1 italic">crowemi-io</span>
             </div>
             <div className="text-xl leading-loose text-white-50">
-              A technology consulting firm providing technology services for web, and data.
+              A technology consulting firm providing technology services for web and data.
             </div>
           </div>
         </div>

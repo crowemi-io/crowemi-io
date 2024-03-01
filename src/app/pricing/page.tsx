@@ -6,11 +6,11 @@ import PricingWebHosting from "../services/web-hosting/pricing"
 export default function WebDevelopment() {
     return (
         <>
-            <PageBanner title="pricing" tagline=" transparent pricing to build and maintain the technoloy you need to run a successful business." />
+            <PageBanner title="pricing" tagline="clear and transparent pricing to build and maintain the technoloy needed to run your business." />
             <div className="container mx-auto">
             <Pricing
                 title="contracting services"
-                tagline="custom efforts, enhancements, on-going support and maintenance; we offer a variety of contracting services to fit your needs."
+                tagline="custom efforts, enhancements, on-going support, and maintenance -- we offer a variety of contracting services to fit your needs."
                 pricingBlocks={
                     [
                         {
