@@ -1,3 +1,5 @@
+import { Email, Phone } from "./Common"
+
 export default function Headers() {
     return (
         <div className="mx-auto bg-primary border-b border-b-bc">
@@ -27,7 +29,7 @@ export default function Headers() {
                                     </div>
                                     <div className="basis-3/4">
                                         <div className="text-gray-300">phone:</div>
-                                        <div className="font-bold">555-555-5555</div>
+                                        <div className="font-bold"><a href={Phone.href}>{Phone.display}</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -42,7 +44,7 @@ export default function Headers() {
                                     </div>
                                     <div className="basis-3/4">
                                         <div className="text-gray-300">email:</div>
-                                        <div className="font-bold">hello@crowemi.com</div>
+                                        <div className="font-bold"><a href="mailto:hello@crowemi.com">hello@crowemi.com</a></div>
                                     </div>
                                 </div>
                             </div>

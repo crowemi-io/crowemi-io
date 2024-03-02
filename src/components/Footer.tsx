@@ -8,7 +8,7 @@ interface Props {
 export default function Footer({ LinkItems }: Props) {
     return (
         <>
-            <div className="bg-primary p-10  text-white">
+            {/* <div className="bg-primary p-10  text-white">
                 <div className="container mx-auto pt-10 pb-10">
                     <div className="grid grid-cols-2">
                         <div>
@@ -22,7 +22,7 @@ export default function Footer({ LinkItems }: Props) {
                 </div>
 
 
-            </div>
+            </div> */}
             <div  className="bg-primary p-10  text-white border-t border-t-bc">
                 <div className="flex container mx-auto">
                     <div className="grow">

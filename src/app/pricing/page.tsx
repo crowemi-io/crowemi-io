@@ -1,5 +1,4 @@
 import PageBanner from "../../components/PageBanner"
-import Divider from "../../components/divider"
 import Pricing from "../../components/pricing/Pricing"
 import PricingWebHosting from "../services/web-hosting/pricing"
 
@@ -43,8 +42,6 @@ export default function WebDevelopment() {
                     ]
                 }
             />
-            <Divider />
-            <PricingWebHosting />
             </div>
         </>
     )

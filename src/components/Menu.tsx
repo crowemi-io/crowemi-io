@@ -13,7 +13,6 @@ export interface LinkItem {
 }
 
 function getClass(currentPath: string, route: string) {
-    // TODO: strip the base path from route
     currentPath = `/${currentPath.split("/")[1]}`;
     if (currentPath == route) {
         return "border-b-stone-200 border-b-4 border-b-primary border-b-4 p-5 text-lg"
