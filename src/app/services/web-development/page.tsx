@@ -1,5 +1,5 @@
-import FeatureSection, {Feature} from "../../lib/FeatureSection"
-import PageBanner from "../../lib/PageBanner"
+import FeatureSection, {Feature} from "../../ui/FeatureSection"
+import PageBanner from "../../ui/PageBanner"
 
 const features: Feature[] = [
     {

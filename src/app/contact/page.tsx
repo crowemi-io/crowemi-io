@@ -1,5 +1,5 @@
-import PageBanner from "../lib/PageBanner"
-import { Email, Phone } from "../lib/Common"
+import PageBanner from "../ui/PageBanner"
+import { Email, Phone } from "../ui/Common"
 
 export default function Contact() {
     return (
