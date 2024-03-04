@@ -1,4 +1,4 @@
-import { Email, Phone } from "./Common"
+import { Email, Phone } from "./common";
 
 export default function Headers() {
     return (

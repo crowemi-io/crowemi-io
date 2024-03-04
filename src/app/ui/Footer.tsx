@@ -1,5 +1,4 @@
-import { LinkItem } from "./Menu"
-import Newsletter from "./Newsletter"
+import { LinkItem } from "./menu"
 
 interface Props {
     LinkItems: LinkItem[]
@@ -8,21 +7,6 @@ interface Props {
 export default function Footer({ LinkItems }: Props) {
     return (
         <>
-            {/* <div className="bg-primary p-10  text-white">
-                <div className="container mx-auto pt-10 pb-10">
-                    <div className="grid grid-cols-2">
-                        <div>
-                            <div className="text-5xl font-extrabold">ready to elevate your business?</div>
-                            <div className="lead text-xl">we're here to help</div>
-                        </div>
-                        <div className="text-right">
-                        </div>
-
-                    </div>
-                </div>
-
-
-            </div> */}
             <div  className="bg-primary p-10  text-white border-t border-t-bc">
                 <div className="flex container mx-auto">
                     <div className="grow">
@@ -40,7 +24,6 @@ export default function Footer({ LinkItems }: Props) {
                     </div>
                 </div>
             </div>
-
         </>
     )
 }
