@@ -1,4 +1,4 @@
-import PageBanner from "../../../components/PageBanner"
+import PageBanner from "../../lib/PageBanner"
 
 export default function WebDevelopment() {
     return (

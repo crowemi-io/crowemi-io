@@ -1,5 +1,5 @@
-import InfoPane, { InfoPaneConfig } from "../../components/InfoPane"
-import PageBanner from "../../components/PageBanner"
+import InfoPane, { InfoPaneConfig } from "../lib/InfoPane"
+import PageBanner from "../lib/PageBanner"
 
 
 export default function Services() {

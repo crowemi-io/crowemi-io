@@ -1,5 +1,5 @@
-import PageBanner from "../../components/PageBanner"
-import Pricing from "../../components/pricing/Pricing"
+import PageBanner from "../lib/PageBanner"
+import Pricing from "../lib/pricing/Pricing"
 import PricingWebHosting from "../services/web-hosting/pricing"
 
 export default function WebDevelopment() {

@@ -2,9 +2,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ReactNode } from "react";
 
-import Menu, { LinkItem } from "../components/Menu"
-import Header from "../components/Header"
-import Footer from "../components/Footer";
+import Menu, { LinkItem } from "./lib/Menu"
+import Header from "./lib/Header"
+import Footer from "./lib/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
