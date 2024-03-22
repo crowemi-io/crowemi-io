@@ -21,6 +21,6 @@ COPY --from=builder /app/package.json ./package.json
 
 ENV NODE_ENV production
 
-EXPOSE 8080
+EXPOSE 3000
 
 CMD ["npm", "start"]

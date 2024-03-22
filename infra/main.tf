@@ -17,13 +17,16 @@ resource "google_cloud_run_v2_service" "this" {
     template {
         containers {
             image = "us-west1-docker.pkg.dev/${local.project}/crowemi-io/${local.service}:${var.docker_image_tag}"
+            ports {
+                container_port = 3000
+            }
             startup_probe {
                 initial_delay_seconds = 0
                 timeout_seconds       = 1
                 period_seconds        = 3
                 failure_threshold     = 1
                 tcp_socket {
-                    port = 8080
+                    port = 3000
                 }
             }
             liveness_probe {
