@@ -23,7 +23,7 @@ resource "google_cloud_run_v2_service" "this" {
                 period_seconds        = 3
                 failure_threshold     = 1
                 tcp_socket {
-                    port = 3000
+                    port = 8080
                 }
             }
             liveness_probe {
