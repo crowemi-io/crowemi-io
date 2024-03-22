@@ -33,6 +33,9 @@ resource "google_cloud_run_v2_service" "this" {
                 http_get {
                     path = "/"
                 }
+                tcp_socket {
+                  port = 3000
+                }
             }
         }
         service_account = google_service_account.service_account.email
