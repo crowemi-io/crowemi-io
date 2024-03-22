@@ -1,4 +1,4 @@
-import Pricing from "../../ui/pricing/pricing"
+import Pricing from "../../ui/pricing/Pricing"
 
 export default function PricingWebHosting() {
     return(

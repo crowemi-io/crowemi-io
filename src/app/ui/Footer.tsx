@@ -1,4 +1,4 @@
-import { LinkItem } from "./menu"
+import { LinkItem } from "./Menu"
 
 interface Props {
     LinkItems: LinkItem[]

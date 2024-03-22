@@ -1,4 +1,4 @@
-import PageBanner from "../../ui/page-banner"
+import PageBanner from "../../ui/PageBanner"
 
 export default function WebDevelopment() {
     return (
