@@ -1,6 +1,6 @@
 "use server";
 
-import {APIHost, EmailContent} from "../ui/common";
+import {APIHost, EmailContent} from "../ui/Common";
 
 type form = {
     FirstName: string,

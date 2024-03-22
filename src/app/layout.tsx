@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 
 import Menu, { LinkItem } from "./ui/menu"
 import Header from "./ui/header"
-import Footer from "./ui/footer";
+import Footer from "./ui/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
