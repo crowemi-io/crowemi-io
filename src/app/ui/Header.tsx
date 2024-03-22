@@ -44,7 +44,7 @@ export default function Headers() {
                                     </div>
                                     <div className="basis-3/4">
                                         <div className="text-gray-300">email:</div>
-                                        <div className="font-bold"><a href="mailto:hello@crowemi.com">hello@crowemi.com</a></div>
+                                        <div className="font-bold"><a href="mailto:{ Email }">{ Email }</a></div>
                                     </div>
                                 </div>
                             </div>
