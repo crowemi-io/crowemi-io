@@ -1,6 +1,6 @@
-import PageBanner from "../ui/page-banner"
+import PageBanner from "../ui/PageBanner"
 import { Email, Phone } from "../ui/Common"
-import ContactForm from "../ui/contact-form"
+import ContactForm from "../ui/ContactForm"
 
 export default function Contact() {
     return (

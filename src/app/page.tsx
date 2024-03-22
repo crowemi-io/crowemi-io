@@ -1,5 +1,5 @@
-import InfoPane, { InfoPaneConfig } from "./ui/info-pane";
-import PageBanner from "./ui/page-banner";
+import InfoPane, { InfoPaneConfig } from "./ui/InfoPane";
+import PageBanner from "./ui/PageBanner";
 
 export default function Page() {
   return (
