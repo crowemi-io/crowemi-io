@@ -13,7 +13,6 @@ resource "google_cloud_run_v2_service" "crowemi_io" {
     name     = local.service
     location = local.region
     ingress = "INGRESS_TRAFFIC_ALL"
-
     template {
         containers {
             image = "us-west1-docker.pkg.dev/${local.project}/crowemi-io/${local.service}:${var.docker_image_tag}"
@@ -24,11 +23,6 @@ resource "google_cloud_run_v2_service" "crowemi_io" {
         }
         service_account = google_service_account.service_account.email
     }
-
-    traffic {
-        percent         = 100
-    }
-
 }
 
 resource "google_cloud_run_domain_mapping" "crowemi_io" {
