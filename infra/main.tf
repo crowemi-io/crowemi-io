@@ -20,6 +20,9 @@ resource "google_cloud_run_v2_service" "crowemi_io" {
             ports {
                 container_port = 3000
             }
+            metadata {
+                namespace = local.service
+            }
         }
         service_account = google_service_account.service_account.email
     }
