@@ -9,30 +9,27 @@ resource "google_service_account" "service_account" {
     description  = "A service account for ${local.service}"
 }
 
-resource "google_cloud_run_service" "crowemi_io" {
+resource "google_cloud_run_v2_service" "crowemi_io" {
     name     = local.service
     location = local.region
+    iingress = "INGRESS_TRAFFIC_ALL"
 
     template {
-        spec {
-            containers {
-                image = "us-west1-docker.pkg.dev/${local.project}/crowemi-io/${local.service}:${var.docker_image_tag}"
+        containers {
+            image = "us-west1-docker.pkg.dev/${local.project}/crowemi-io/${local.service}:${var.docker_image_tag}"
 
-                ports {
-                    container_port = 3000
-                }
-
-                resources {
-                    limits {
-                        cpu    = "1000m"
-                        memory = "512Mi"
-                    }
-                }
+            ports {
+                container_port = 3000
             }
 
-            service_account_name = google_service_account.service_account.name
-            max_instances        = 2
+            resources {
+                limits {
+                    cpu    = "1000m"
+                    memory = "512Mi"
+                }
+            }
         }
+        service_account_name = google_service_account.service_account.name
     }
 
     traffic {
@@ -40,9 +37,6 @@ resource "google_cloud_run_service" "crowemi_io" {
         latest_revision = true
     }
 
-    autogenerate_revision_name = true
-    delete_revision_on_update  = true
-    allow_unauthenticated      = true
 }
 
 resource "google_cloud_run_domain_mapping" "crowemi_io" {
@@ -54,6 +48,6 @@ resource "google_cloud_run_domain_mapping" "crowemi_io" {
     }
 
     spec {
-        route_name = google_cloud_run_v2_service.crowemi-io.name
+        route_name = google_cloud_run_v2_service.crowemi_io.name
     }
 }
