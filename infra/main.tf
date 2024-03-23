@@ -46,6 +46,6 @@ resource "google_cloud_run_domain_mapping" "crowemi-io" {
     }
 
     spec {
-        route_name = google_cloud_run_service.crowemi-io.name
+        route_name = google_cloud_run_v2_service.crowemi-io.name
     }
 }
