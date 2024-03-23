@@ -9,7 +9,7 @@ resource "google_service_account" "service_account" {
     description  = "A service account for ${local.service}"
 }
 
-resource "google_cloud_run_v2_service" "this" {
+resource "google_cloud_run_v2_service" "crowemi-io" {
     name     = local.service
     location = "us-west1"
     ingress  = "INGRESS_TRAFFIC_ALL"
@@ -35,5 +35,17 @@ resource "google_cloud_run_v2_service" "this" {
 
         }
         service_account = google_service_account.service_account.email
+    }
+}
+resource "google_cloud_run_domain_mapping" "crowemi-io" {
+    location = "us-west1"
+    name     = "io.crowemi.com"
+
+    metadata {
+        namespace = local.service
+    }
+
+    spec {
+        route_name = google_cloud_run_service.crowemi-io.name
     }
 }
