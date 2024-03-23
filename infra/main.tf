@@ -46,7 +46,7 @@ resource "google_cloud_run_domain_mapping" "crowemi_io" {
     name     = "io.crowemi.com"
 
     metadata {
-        namespace = local.service
+        namespace = local.project
     }
 
     spec {
