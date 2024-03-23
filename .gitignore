@@ -3,3 +3,5 @@ node_modules/
 .idea
 .fleet
 .secret
+infra/.terraform
+infra/.terraform.lock.hcl
