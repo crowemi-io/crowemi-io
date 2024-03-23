@@ -20,12 +20,25 @@ resource "google_cloud_run_v2_service" "crowemi_io" {
             ports {
                 container_port = 3000
             }
-            metadata {
-                namespace = local.service
-            }
         }
         service_account = google_service_account.service_account.email
     }
+}
+data "google_iam_policy" "noauth" {
+    binding {
+        role = "roles/run.invoker"
+        members = [
+            "allUsers",
+        ]
+    }
+}
+
+resource "google_cloud_run_service_iam_policy" "noauth" {
+    location    = google_cloud_run_v2_service.crowemi_io.location
+    project     = google_cloud_run_v2_service.crowemi_io.project
+    service     = google_cloud_run_v2_service.crowemi_io.name
+
+    policy_data = data.google_iam_policy.noauth.policy_data
 }
 
 resource "google_cloud_run_domain_mapping" "crowemi_io" {
