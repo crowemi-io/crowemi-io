@@ -12,7 +12,7 @@ resource "google_service_account" "service_account" {
 resource "google_cloud_run_v2_service" "crowemi_io" {
     name     = local.service
     location = local.region
-    iingress = "INGRESS_TRAFFIC_ALL"
+    ingress = "INGRESS_TRAFFIC_ALL"
 
     template {
         containers {
@@ -21,20 +21,11 @@ resource "google_cloud_run_v2_service" "crowemi_io" {
             ports {
                 container_port = 3000
             }
-
-            resources {
-                limits {
-                    cpu    = "1000m"
-                    memory = "512Mi"
-                }
-            }
         }
-        service_account_name = google_service_account.service_account.name
     }
 
     traffic {
         percent         = 100
-        latest_revision = true
     }
 
 }
