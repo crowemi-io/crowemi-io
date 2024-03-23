@@ -22,6 +22,7 @@ resource "google_cloud_run_v2_service" "crowemi_io" {
                 container_port = 3000
             }
         }
+        sservice_account = google_service_account.service_account.name
     }
 
     traffic {
