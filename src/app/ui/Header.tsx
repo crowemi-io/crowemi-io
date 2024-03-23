@@ -6,14 +6,16 @@ export default function Headers() {
             <div className="mx-auto container p-2">
                 <div className="flex py-5">
                     <div className="grow text-white">
-                        <div className="text-center sm:flex sm:flex-row sm:mx-auto">
-                            <div className="flex justify-center items-center pr-2">
-                                <img className="sm:w-16 w-24" src="logo.svg"></img>
+                        <a href="/">
+                            <div className="text-center sm:flex sm:flex-row sm:mx-auto">
+                                <div className="flex justify-center items-center pr-2">
+                                    <img alt={"crowemi-io-logo"} className="sm:w-16 w-24" src="/logo.svg"></img>
+                                </div>
+                                <div className="font-extrabold text-5xl text-nowrap">
+                                    crowemi-io
+                                </div>
                             </div>
-                            <div className="font-extrabold text-5xl text-nowrap">
-                                crowemi-io
-                            </div>
-                        </div>
+                        </a>
                     </div>
                     <div className="hidden md:inline">
                         <div className="flex flex-row text-white">
