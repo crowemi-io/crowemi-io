@@ -13,3 +13,7 @@ export type EmailContent = {
     Subject: string
     HtmlBody: string
 }
+export type PayLoad<T> = {
+    Mock: boolean
+    Object: T
+}

@@ -1,9 +1,25 @@
 import { PostContactForm } from "../contact/action"
 
 export default function ContactForm() {
-
+    async function formHandler(formData: FormData){
+        "use server"
+        let contactForm = {
+            FirstName: formData.get("first-name"),
+            LastName: formData.get("last-name"),
+            Email: formData.get("email"),
+            PhoneNumber: formData.get("phone-number"),
+            Message: formData.get("message")
+        }
+        PostContactForm(formData).then((d) => {
+            if (d) {
+                console.log("Success!")
+            } else {
+                console.log("Faile")
+            }
+        })
+    }
     return (
-        <form action={PostContactForm} className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48">
+        <form action={formHandler} className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48">
             <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
                 <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                     <div>
