@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ReactNode } from "react";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 import Menu, { LinkItem } from "./ui/Menu"
 import Header from "./ui/Header"
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: Props) {
         {children}
         <Footer LinkItems={menuItems} />
       </body>
+      <GoogleAnalytics gaId="G-VQB6V69ZJG" />
     </html>
   );
 }
