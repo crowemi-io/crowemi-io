@@ -2,10 +2,19 @@ import PageBanner from "../ui/PageBanner"
 import { Email, Phone } from "../ui/Common"
 import ContactForm from "../ui/ContactForm"
 
+import type { Metadata } from 'next'
+
+const TITLE: string = "contact"
+const TAGLINE: string = "get in touch with us today – we\\'re here to support you every step of the way."
+export const metadata: Metadata = {
+    title: TITLE,
+    description: TAGLINE
+}
+
 export default function Contact() {
     return (
         <>
-            <PageBanner title="contact" tagline="Get in touch with us today – we're here to support you every step of the way." />
+            <PageBanner title={TITLE} tagline={TAGLINE} />
 
             <div className="bg-white">
                 <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
