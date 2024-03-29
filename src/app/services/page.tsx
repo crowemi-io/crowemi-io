@@ -1,11 +1,18 @@
 import InfoPane, { InfoPaneConfig } from "../ui/InfoPane"
 import PageBanner from "../ui/PageBanner"
 
+import type { Metadata } from 'next'
 
+const TITLE: string = "services"
+const TAGLINE: string = "unlock your business potential with our comprehensive web, and data soluations."
+export const metadata: Metadata = {
+    title: TITLE,
+    description: TAGLINE
+}
 export default function Services() {
     return (
         <>
-            <PageBanner title="services" tagline="unlock your business potential with our comprehensive web, and data soluations." />
+            <PageBanner title={TITLE} tagline={TAGLINE} />
 
             <InfoPane infoPaneConfig={
                 {

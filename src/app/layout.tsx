@@ -10,7 +10,8 @@ import Footer from "./ui/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "crowemi-io"
+  title: "crowemi-io",
+  description: "A technology consulting firm providing technology services for web and data."
 };
 
 const menuItems: LinkItem[] = [

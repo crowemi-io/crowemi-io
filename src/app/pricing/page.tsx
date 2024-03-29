@@ -2,10 +2,18 @@ import PageBanner from "../ui/PageBanner"
 import Pricing from "../ui/pricing/Pricing"
 import PricingWebHosting from "../services/web-hosting/pricing"
 
+import type { Metadata } from 'next'
+
+const TAGLINE: string = "clear and transparent pricing to build and maintain the technology needed to run your business."
+const TITLE: string = "pricing"
+export const metadata: Metadata = {
+    title: TITLE,
+    description: TAGLINE,
+}
 export default function WebDevelopment() {
     return (
         <>
-            <PageBanner title="pricing" tagline="clear and transparent pricing to build and maintain the technoloy needed to run your business." />
+            <PageBanner title={TITLE} tagline={TAGLINE} />
             <div className="container mx-auto">
             <Pricing
                 title="contracting services"
