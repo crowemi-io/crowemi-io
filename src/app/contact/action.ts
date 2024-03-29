@@ -1,44 +1,51 @@
 "use server";
 
-import {EmailContent, APIHost, PayLoad} from "../ui/Common"
-import {bool} from "prop-types";
+import {EmailContent, PayLoad, SendEmail} from "../ui/Common"
+import {revalidatePath} from "next/cache";
+import {z} from "zod";
 
-type form = {
-    FirstName: string,
-    LastName: string,
-    Email: string,
-    PhoneNumber: string,
-    Message: string
-}
+const form = z.object({
+    FirstName: z.string().min(1, "First Name is required."),
+    LastName: z.string().min(1, "Last Name is required."),
+    Email: z.string().min(1).email("Email is required."),
+    PhoneNumber: z.string(),
+    Message: z.string().min(1, "Message is required.")
+})
 
-function validateForm(contactForm: form): boolean {
-    return true;
-}
-
-export async function PostContactForm(formData: FormData): Promise<boolean> {
-    let payload: PayLoad<EmailContent> = {
-        Mock: true,
-        Object: {
-            FromAddress: "no-reply@crowemi.com",
-            ReplayToAddress: "no-reply@crowemi.com",
-            ToAddresses: ["crowemi@hotmail.com"],
-            CcAddresses: [],
-            BccAddresses: [],
-            Subject: "Test Message from NextJS",
-            HtmlBody: "<h1>Hello World! From NextJS</h1>"
+export async function PostContactForm(state: any, formData: FormData) {
+    const formSchema = form.safeParse(
+        {
+            FirstName: formData.get("first-name"),
+            LastName: formData.get("last-name"),
+            Email: formData.get("email"),
+            PhoneNumber: formData.get("phone-number"),
+            Message: formData.get("message")
         }
-    }
-    
-    let ret: boolean = await fetch(APIHost + "v1/email/", {method: 'POST', body: JSON.stringify(payload)})
-        .then((resp) => {
-            if (!resp.ok) {
-                console.error("")
-                return false;
+    );
+
+    if ( formSchema.success) {
+
+        let payload: PayLoad<EmailContent> = {
+            Mock: true,
+            Object: {
+                FromAddress: "no-reply@crowemi.com",
+                ReplayToAddress: "no-reply@crowemi.com",
+                ToAddresses: [formSchema.data.Message],
+                CcAddresses: [],
+                BccAddresses: [],
+                Subject: `New Contact Message from ${formSchema.data.FirstName} ${formSchema.data.LastName}`,
+                HtmlBody: `<p>${formSchema.data.Message}</p>`
             }
-            return resp.json();
-        }).then((data) => {
-            console.log(data)
-            return true;
-        })
-    return ret;
+        }
+        let ret = await SendEmail(payload)
+        console.log(ret)
+        return { data: ret }
+    }
+    if (formSchema.error) {
+        // TODO: handle errors
+        return { data: formSchema.error.format() }
+    }
+
+
+
 }

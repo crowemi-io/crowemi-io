@@ -1,31 +1,20 @@
-import { PostContactForm } from "../contact/action"
+"use client"
+
+import { PostContactForm } from "../contact/action";
+import { useFormState } from "react-dom";
 
 export default function ContactForm() {
-    async function formHandler(formData: FormData){
-        "use server"
-        let contactForm = {
-            FirstName: formData.get("first-name"),
-            LastName: formData.get("last-name"),
-            Email: formData.get("email"),
-            PhoneNumber: formData.get("phone-number"),
-            Message: formData.get("message")
-        }
-        PostContactForm(formData).then((d) => {
-            if (d) {
-                console.log("Success!")
-            } else {
-                console.log("Faile")
-            }
-        })
-    }
+    let [state, formAction] = useFormState(PostContactForm, null)
+
     return (
-        <form action={formHandler} className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48">
+        <>
+        <form action={formAction} className="px-6 pb-24 pt-10 sm:pb-32 lg:px-8 lg:py-24">
             <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
                 <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                     <div>
                         <label className="block text-sm font-semibold leading-6 text-gray-900">First name</label>
                         <div className="mt-2.5">
-                            <input type="text" name="first-name" id="first-name" autoComplete="given-name" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-sm sm:leading-6" />
+                            <input type="text" name="first-name" id="first-name" defaultValue={""} autoComplete="given-name" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-sm sm:leading-6" />
                         </div>
                     </div>
                     <div>
@@ -58,6 +47,10 @@ export default function ContactForm() {
                 </div>
             </div>
         </form>
+        <div>
+            {JSON.stringify(state, null, 2)}
+        </div>
+        </>
     )
 
 }
