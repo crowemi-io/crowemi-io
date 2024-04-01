@@ -13,6 +13,7 @@ resource "google_cloud_run_v2_service" "crowemi_io" {
     name     = local.service
     location = local.region
     ingress = "INGRESS_TRAFFIC_ALL"
+    launch_stage = "BETA"
     template {
         containers {
             image = "us-west1-docker.pkg.dev/${local.project}/crowemi-io/${local.service}:${var.docker_image_tag}"
@@ -22,6 +23,13 @@ resource "google_cloud_run_v2_service" "crowemi_io" {
             }
         }
         service_account = google_service_account.service_account.email
+        vpc_access{
+            network_interfaces {
+                network = "crowemi-io-network" # TODO: ref data
+                subnetwork = "crowemi-io-subnet-01" # TODO: ref data
+            }
+            egress = "ALL_TRAFFIC"
+        }
     }
 }
 data "google_iam_policy" "noauth" {
