@@ -1,20 +1,29 @@
 import {APIHost} from "../ui/Common"
+import {GetGCPToken} from "../ts-utils/google/GoogleAuthentication";
 
-async function apiHealth() {
-    try {
-        const response = await fetch(APIHost + "/v1/health/");
-        const text = await response.text();
-        console.log(text);
-        return text;
-    } catch (error) {
-        console.error(error);
-        return "failed";
-    }
+
+type health = {
+    status_code: number
+    status: string
 }
-export default function Health() {
+async function apiHealth() : Promise<string> {
+    'use server'
+    return await GetGCPToken("https://crowemi-io-api-k5rjgoqtkq-uw.a.run.app/v1/health", "https://crowemi-io-api-k5rjgoqtkq-uw.a.run.app")
+}
+export default async function Health() {
+    var health = await apiHealth().then((res) => {
+        return JSON.parse(res) as health;
+    }).catch((error) => {
+        console.error("Error checking health:", error)
+        var ret: health = {
+            status: "failure",
+            status_code: 0
+        }
+        return ret;
+    })
     return (
         <div>
-            {apiHealth()}
+            {health.status}
         </div>
     )
 }

@@ -1,0 +1,17 @@
+const {GoogleAuth} = require('google-auth-library');
+const auth = new GoogleAuth();
+
+export async function GetGCPToken(url: string, targetAudience: string) {
+    console.info(`request ${url} with target audience ${targetAudience}`);
+    const client = await auth.getIdTokenClient(targetAudience);
+
+    // Alternatively, one can use `client.idTokenProvider.fetchIdToken`
+    // to return the ID Token.
+    const res = await client.request({url}).catch((err: Error) => {
+        console.error(err.message);
+        process.exitCode = 1;
+    });
+    console.info(res.data);
+    return res.data;
+}
+

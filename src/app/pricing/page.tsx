@@ -32,7 +32,7 @@ export default function WebDevelopment() {
                         {
                             title: "Standard",
                             tagline: "For medium businesses",
-                            price: 175,
+                            price: 150,
                             pricePeriod: "hour",
                             pricingFeatures: [
                                 "24-hour support response time",
@@ -41,7 +41,7 @@ export default function WebDevelopment() {
                         {
                             title: "Premium",
                             tagline: "For large businesses",
-                            price: 250,
+                            price: 200,
                             pricePeriod: "hour",
                             pricingFeatures: [
                                 "1-hour, dedicated support response time",
