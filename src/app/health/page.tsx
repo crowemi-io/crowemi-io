@@ -5,10 +5,11 @@ import {GetGCPToken} from "../ts-utils/google/GoogleAuthentication";
 type health = {
     status_code: number
     status: string
+    error: any
 }
 async function apiHealth() : Promise<string> {
     'use server'
-    return await GetGCPToken("https://crowemi-io-api-k5rjgoqtkq-uw.a.run.app/v1/health", "https://crowemi-io-api-k5rjgoqtkq-uw.a.run.app")
+    return await GetGCPToken(`${APIHost}/v1/health`, APIHost ? APIHost : "")
 }
 export default async function Health() {
     var health = await apiHealth().then((res) => {
@@ -17,13 +18,15 @@ export default async function Health() {
         console.error("Error checking health:", error)
         var ret: health = {
             status: "failure",
-            status_code: 0
+            status_code: 0,
+            error: error
         }
         return ret;
     })
     return (
         <div>
-            {health.status}
+            <p>status: {health.status}</p>
+            <p>error: {health.error}</p>
         </div>
     )
 }

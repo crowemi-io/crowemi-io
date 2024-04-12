@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
         rules: {
             userAgent: '*',
             allow: '/',
-            disallow: '/ui/',
+            disallow: ['/ui/', '/health/'],
         },
         sitemap: 'https://io.crowemi.com/sitemap.xml',
     }
