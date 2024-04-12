@@ -11,7 +11,8 @@ type health = {
 }
 async function apiHealth() : Promise<string> {
     'use server'
-    return await GetGCPToken(`${APIHost}/v1/health`, APIHost ? APIHost : "")
+    const host: string = APIHost ? APIHost : "https://crowemi-io-api-k5rjgoqtkq-uw.a.run.app/"
+    return await GetGCPToken(`${host}/v1/health`, host)
 }
 export default async function Health() {
     var health = await apiHealth().then((res) => {
