@@ -1,6 +1,7 @@
 import {APIHost} from "../ui/Common"
 import {GetGCPToken} from "../ts-utils/google/GoogleAuthentication";
 
+export const dynamic = 'force-dynamic'
 
 type health = {
     status_code: number
