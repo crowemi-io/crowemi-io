@@ -24,16 +24,41 @@ export async function PostContactForm(formData: FormData){
     }
     
     let emailContent: EmailContent = {
-        FromAddress: "no-reply@crowemi.com",
-        ReplayToAddress: "no-reply@crowemi.com",
-        ToAddresses: ["crowemi@hotmail.com"],
-        CcAddresses: [],
-        BccAddresses: [],
-        Subject: "Test Message from NextJS",
-        HtmlBody: "<h1>Hello World! From NextJS</h1>"
+        source: "no-reply@crowemi.com",
+        reply_to_address: ["no-reply@crowemi.com"],
+        to_address: ["crowemi@hotmail.com"],
+        cc_address: null,
+        bcc_address: null,
+        subject: "New Contact Form Submission",
+        text: null,
+        html: `
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Contact Information</title>
+        </head>
+        <body>
+            <h1>Contact Information</h1>
+            <p><strong>First Name:</strong> ${contactForm.FirstName}</p>
+            <p><strong>Last Name:</strong> ${contactForm.LastName}</p>
+            <p><strong>Email:</strong> ${contactForm.Email}</p>
+            <p><strong>Phone:</strong> ${contactForm.PhoneNumber}</p>
+            <p><strong>Message:</strong> ${contactForm.Message}</p>
+        </body>
+        </html>
+        `
     }
-    
-    const resp = await fetch(APIHost + "v1/email/", {method: 'POST', body: JSON.stringify(emailContent)})
-    const data = await resp.json()
-    return { status: 200, message: data}
+
+    await fetch(
+        APIHost + "email/", 
+        {
+            method: 'POST', 
+            headers: { 'Content-Type': 'application/json'}, 
+            body: JSON.stringify(emailContent)
+        }
+    )
+        .then(res => console.log(res.status))
+        .then(data => console.log(data))
 }

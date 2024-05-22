@@ -5,3 +5,6 @@ node_modules/
 .secret
 infra/.terraform
 infra/.terraform.lock.hcl
+.env.development
+.env.stage
+.env.production
